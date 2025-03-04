@@ -19,9 +19,9 @@ jobs:
       with:
         node-version: 23.x
     - name: Installing dependencies
-      run: pnpm ci
+      run: npm ci
     - name: Generating coverage information
-      run: pnpm run coverage
+      run: npm run coverage
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2.3.6
       with:

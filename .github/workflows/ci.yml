@@ -23,6 +23,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Installing dependencies
-      run: pnpm ci
+      run: npm ci
     - name: Running tests
-      run: pnpm test
+      run: npm test

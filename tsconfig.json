@@ -1,0 +1,19 @@
+{
+  "exclude": [
+    "./tests",
+    "./node_modules",
+    "./dist"
+  ],
+  "compilerOptions": {
+    "target": "ES2024",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "declaration": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "outDir": "./dist",
+    "lib": ["esnext", "DOM"],
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}

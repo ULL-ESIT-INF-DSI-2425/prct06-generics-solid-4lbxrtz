@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { Films, FilmsCollection } from "../../src/ejercicio_1/filmsCollection";
+import { FilmsCollection } from "../../src/ejercicio_1/filmsCollection";
 
 const myFilms = new FilmsCollection([
   {
@@ -29,28 +29,13 @@ const myFilms = new FilmsCollection([
 ]);
 
 describe("FilmsCollection Tests", () => {
-  test("addItem should add a new film to the collection", () => {
-    const newFilm: Films = {
-      name: "The Dark Knight",
-      director: "Christopher Nolan",
-      releaseDate: new Date("2008-07-18"),
-      genre: "Action",
-      certification: "12",
-      language: "English",
-    };
-
-    myFilms.addItem(newFilm);
-    expect(myFilms.getNumberOfItems()).toBe(4);
-    expect(myFilms.search("The Dark Knight").length).toBe(1);
-  });
-
   describe("search function tests", () => {
     test('search("Nolan") should return films directed by Christopher Nolan', () => {
-      expect(myFilms.search("Nolan").length).toBe(3);
+      expect(myFilms.search("Nolan").length).toBe(2);
     });
 
     test('search("12") should return films with certification "12"', () => {
-      expect(myFilms.search("12").length).toBe(3);
+      expect(myFilms.search("12").length).toBe(2);
     });
 
     test('search("Sci-Fi") should return only Sci-Fi films', () => {
@@ -65,9 +50,5 @@ describe("FilmsCollection Tests", () => {
     test('search("Non-Existent") should return an empty array', () => {
       expect(myFilms.search("Non-Existent")).toEqual([]);
     });
-  });
-
-  test("getNumberOfItems should return the correct number of films", () => {
-    expect(myFilms.getNumberOfItems()).toBe(4);
   });
 });

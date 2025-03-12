@@ -7,7 +7,7 @@ export abstract class SongCollection {
   constructor(
     public name: string,
     public published_date: Date,
-    protected songs: Song[] = [],
+    public songs: Song[] = [],
   ) {}
 
   /**
@@ -41,7 +41,7 @@ export abstract class SongCollection {
   getSongs(): Song[] {
     return [...this.songs]; // Return a copy to prevent external modification
   }
-  
+
   /**
    * Adds a song to the collection.
    * @param song - The song to add.

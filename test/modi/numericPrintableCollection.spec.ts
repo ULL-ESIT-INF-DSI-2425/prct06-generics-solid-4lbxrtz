@@ -1,4 +1,4 @@
-import { describe, expect, test, beforeEach } from "vitest";
+import { describe, expect, test, beforeEach, expectTypeOf } from "vitest";
 import { NumericPrintableCollection } from "../../src/modi/numericPrintableCollection";
 
 describe("PrintableCollection class tests", () => {
@@ -44,6 +44,13 @@ describe("PrintableCollection class tests", () => {
       numberCollection.addItem(5);
       numberCollection.addItem(6);
       expect(numberCollection.print()).toBe("1, 2, 3, 4, 5, 6");
+    });
+
+    test("should return true when checking if the methods exist", () => {
+      expectTypeOf(numberCollection).toHaveProperty("addItem");
+      expectTypeOf(numberCollection).toHaveProperty("getItem");
+      expectTypeOf(numberCollection).toHaveProperty("removeItem");
+      expectTypeOf(numberCollection).toHaveProperty("getNumberOfItems");
     });
   });
 });

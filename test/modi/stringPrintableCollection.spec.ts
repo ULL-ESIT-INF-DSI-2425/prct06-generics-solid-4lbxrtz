@@ -1,4 +1,4 @@
-import { describe, expect, test, beforeEach } from "vitest";
+import { describe, expect, test, beforeEach, expectTypeOf } from "vitest";
 import { StringPrintableCollection } from "../../src/modi/stringPrintableCollection";
 
 describe("PrintableCollection class tests", () => {
@@ -45,6 +45,13 @@ describe("PrintableCollection class tests", () => {
       expect(stringCollection.print()).toBe(
         "hola, me, llamo, eduardo, segredo",
       );
+    });
+
+    test("should return true when checking if the methods exist", () => {
+      expectTypeOf(stringCollection).toHaveProperty("addItem");
+      expectTypeOf(stringCollection).toHaveProperty("getItem");
+      expectTypeOf(stringCollection).toHaveProperty("removeItem");
+      expectTypeOf(stringCollection).toHaveProperty("getNumberOfItems");
     });
   });
 });

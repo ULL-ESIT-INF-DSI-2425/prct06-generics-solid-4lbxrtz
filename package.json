@@ -10,6 +10,7 @@
     "test:ui": "vitest --ui --coverage",
     "coverage": "vitest run --coverage"
   },
+  "type": "module",
   "keywords": [],
   "author": "Alberto Oria",
   "license": "ISC",

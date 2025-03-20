@@ -1,5 +1,5 @@
 import { describe, expect, test, beforeEach, expectTypeOf } from "vitest";
-import { Logger, Actions } from "../../src/modi2/logger";
+import { Logger, Actions } from "../../src/modi2/logger.js";
 
 describe("Logger class tests", () => {
   let logger: Logger;
